@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>summarEase</title>
+</head>
+
+<body>
+    <!-- As a heading -->
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 ml-5 h2">summarEase</span>
+    </nav>
+
+    <form action="{{url_for('Summarize')}}" method="post">
+        <div class="form-group container mt-5">
+            <h3 for="exampleFormControlTextarea1">Enter your text here :</h3>
+            <textarea class="form-control" name="inputdata" id="inputdata" placeholder="" rows="4" required>{{inputdata}}</textarea>
+        </div>
+
+        <div class="form-group container">
+            <label for="maxL" class="form-label">Range</label>
+            <input type="range" name="maxL" id="maxL" min="20" max="100" value="50">
+        </div>
+
+        <div class="form-group container ">
+            <button type="submit" class="btn btn-primary">Get Summary</button>
+        </div>
+
+    </form>
+
+
+    <div class="container mt-5 mb-10">
+        <h3 for=" exampleFormControlTextarea1 ">Summarized text :</h3>
+        <textarea class="form-control " name="resdata " id="resdata " rows="5 " required>{{res}}</textarea>
+    </div>
+</body>
+
+</html>
